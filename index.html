@@ -1,0 +1,119 @@
+<head>
+	<title id="title"></title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="script.js" defer></script>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+
+	<img id = "tiles" src="Capture.png" style="display:none;">
+
+
+
+	<meta property="og:site_name" content="Immoral Kids"/>
+	<meta property="og:title" content="Immoral Kids Fan Art Museum" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://chameleon-museum.vercel.app/" />
+	<meta property="og:image" content="https://chameleon-museum.vercel.app/Capture.png"/>
+	<meta content="
+	This is a web museum for Best Fan Art from the Immoral Kids Community !
+	🎉 I'm happy to present this work to an anwsomne community ❤️" property="og:description">
+
+
+	<meta name="theme-color" content="#000000">
+
+	<meta name="twitter:card" content="summary_large_image">
+
+
+
+
+
+</head>
+
+<body>
+
+
+	<div class='box'>
+		<h3 id="title-page"></h3>
+	</div>
+	<button id="discover" class="btn-1">Discover</button>
+
+
+
+	<div id="container">
+		<div id="encima">
+			<ul class="card-list">
+
+			</ul>
+		</div>
+	</div>
+
+
+
+
+</body>
+
+
+<footer>
+	<img id='monkey' src='ape.png'>
+</footer>
+
+
+<script>
+	images = [
+		["https://cdn.discordapp.com/attachments/967033738313760811/979391559084679178/E390C260-D51B-42DA-BB6C-FAC635FF2DE5.jpg","Dimid1977#8209"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979387739654996018/329C7EDD-93AD-4568-AF3C-1EFCA18DFE79.jpg","! Rampage#6530"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979345701140058132/photo_2022-05-25_13-00-53_2.jpg","d3r3x.#1254"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979315983401517086/Film_Discord_Night_copy.jpg","DazeefaNFT#1086"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979219903229882378/immoralxfff.jpg","Felixx.Sol#0001"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979153828492480582/AEB77556-54B1-43E9-A3C5-E9443E4FC12E.jpg","Anny#5494"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979146673374765096/unknown.png","!DailyMintNFT#0001"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979112215900745758/Retro_Abstract_Kid_00240.png","CTDot#2781"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/979014006243196949/Untitled29_20220524124014.png","BinN#5368"],
+		["https://cdn.discordapp.com/attachments/967033738313760811/978883878527856771/Untitled6_20220525124347.png","karma#6205"]
+	]
+
+	window.onload = function () {
+		document.getElementById('title').innerHTML = "Immoral Kids Fan Art Museum";
+		document.getElementById('title-page').innerHTML = 'Immoral Kids fan museum';
+
+		images.forEach(element => {
+				push_image(element)
+			});
+	};
+
+	function create_card(src){
+
+		let li = document.createElement('li');
+		li.classList.add("card");
+
+		let a = document.createElement('a');
+		a.classList.add("card-image");
+		a.href=src[0];
+		a.setAttribute('data-image-full',src[0]);
+
+		let img = document.createElement('img');
+		img.src = src[0]
+
+		a.appendChild(img)
+
+		let a2 = document.createElement('a');
+		a2.classList.add("card-description");
+		let h2 = document.createElement('h2');
+		h2.innerHTML = src[1];
+
+		a2.appendChild(h2);
+
+
+
+		li.appendChild(a);
+		li.appendChild(a2);
+
+        return li;
+	}
+
+	function push_image(src){
+		card_list = document.querySelector('.card-list');
+		card_list.appendChild(create_card(src))
+	}
+
+</script>
